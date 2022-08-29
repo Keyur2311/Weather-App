@@ -2,10 +2,10 @@ let city = '';
 async function getWeatherdata() {
     let api = 'http://api.openweathermap.org/data/2.5/weather?q='
     city = document.querySelector('.cityName').value;
-    let apiKey = '&APPID=c6bafb8227a66ae45c8ac2b016e61b31&units=metric&lang=french';
+    let ap = '&APPID=';
+    let apiKey = config.SECRET_API_KEY;
     let units = '&units=metric';
-
-    let url = api + city + apiKey + units;
+    let url = api + city + ap + apiKey + units;
     try {
         let response = await fetch(url);
         if (response.status >= 200 && response.status <= 299) {
@@ -25,6 +25,7 @@ async function getWeatherdata() {
 
 async function loadWeatherData() {
     let data = await getWeatherdata();
+
 
     let html = '';
     let temperature = data.main.temp;
