@@ -1,9 +1,9 @@
 let city = '';
+let apiKey = config.SECRET_API_KEY;
 async function getWeatherdata() {
     let api = 'http://api.openweathermap.org/data/2.5/weather?q='
     city = document.querySelector('.cityName').value;
     let ap = '&APPID=';
-    let apiKey = config.SECRET_API_KEY;
     let units = '&units=metric';
     let url = api + city + ap + apiKey + units;
     try {
