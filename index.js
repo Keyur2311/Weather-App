@@ -25,8 +25,6 @@ async function getWeatherdata() {
 
 async function loadWeatherData() {
     let data = await getWeatherdata();
-
-
     let html = '';
     let temperature = data.main.temp;
     let humidity = data.main.humidity;
