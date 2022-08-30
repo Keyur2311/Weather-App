@@ -1,5 +1,7 @@
+// import SECRET_API_KEY from config.json
 let city = '';
 let apiKey = config.SECRET_API_KEY;
+console.log(apiKey);
 async function getWeatherdata() {
     let api = 'http://api.openweathermap.org/data/2.5/weather?q='
     city = document.querySelector('.cityName').value;
@@ -22,6 +24,8 @@ async function getWeatherdata() {
         console.log(error);
     }
 }
+
+document.getElementById('submit').onclick = function () { loadWeatherData() };
 
 async function loadWeatherData() {
     let data = await getWeatherdata();
