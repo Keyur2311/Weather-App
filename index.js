@@ -1,6 +1,5 @@
-import SECRET_API_KEY from "/config.js"
 let city = '';
-let apiKey = SECRET_API_KEY;
+let apiKey = 'c6bafb8227a66ae45c8ac2b016e61b31';
 async function getWeatherdata() {
     let api = 'http://api.openweathermap.org/data/2.5/weather?q='
     city = document.querySelector('.cityName').value;
